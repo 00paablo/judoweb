@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Torneos de Judo — Organiza tu competición | JUDO (柔道)</title>
+  <meta name="description" content="Crea un torneo de Judo, añade participantes y gestiona cada combate con un marcador reglamentario.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23e63946'/><text x='50%' y='68%' font-size='60' text-anchor='middle' fill='%23ffffff' font-family='serif'>柔</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header" id="site-header">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand-logo" id="logo-brand"><div class="logo-kanji-badge">柔</div><div class="logo-text-wrap"><span class="logo-title">Judo • 柔道</span><span class="logo-sub">El Camino de la Suavidad</span></div></a>
+      <nav class="main-nav" id="main-nav">
+        <a href="filosofia.html" class="nav-link" id="nav-link-filosofia">Filosofía</a>
+        <a href="tecnicas.html" class="nav-link" id="nav-link-tecnicas">Técnicas</a>
+        <a href="cinturones.html" class="nav-link" id="nav-link-cinturones">Cinturones</a>
+        <a href="historia.html" class="nav-link" id="nav-link-historia">Historia</a>
+        <a href="glosario.html" class="nav-link" id="nav-link-glosario">Glosario</a>
+        <a href="marcador.html" class="nav-link nav-link-mobile-cta">Torneo</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="btn-audio" id="btn-sound-toggle" aria-label="Campana"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg><span class="btn-audio-text">Campana</span></button>
+        <div class="auth-nav-container" id="auth-nav-container">
+          <button class="btn-google-auth" id="btn-google-login"><svg class="google-icon" viewBox="0 0 24 24" width="16" height="16"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg><span>Acceder</span></button>
+          <div class="user-profile-chip" id="user-profile-chip" style="display:none;">
+            <button class="profile-chip-btn" id="profile-chip-trigger" aria-expanded="false" aria-label="Menú de usuario"><img src="" alt="Avatar" class="user-avatar-img" id="nav-user-avatar"><span class="user-name-label" id="nav-user-name">Judoka</span><span class="user-belt-badge" id="nav-user-belt">Blanco</span><svg class="chevron-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+            <div class="user-dropdown-menu" id="user-dropdown-menu"><div class="dropdown-header"><strong id="dropdown-full-name">Nombre</strong><span id="dropdown-email">email@gmail.com</span></div><div class="dropdown-divider"></div><button class="dropdown-item" id="btn-open-judoka-passport"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"></rect><line x1="3" y1="10" x2="21" y2="10"></line></svg><span>Mi Pasaporte</span></button><button class="dropdown-item" id="btn-dropdown-quiz"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path></svg><span>Test Tokui-Waza</span></button><div class="dropdown-divider"></div><button class="dropdown-item logout-item" id="btn-google-logout"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline></svg><span>Cerrar sesión</span></button></div>
+          </div>
+        </div>
+        <a href="marcador.html" class="btn-cta-nav" id="cta-header-fight">Torneo</a>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-banner">
+    <div class="page-banner-kanji">一</div>
+    <div class="container page-banner-inner">
+      <div class="page-banner-tag">Organiza tu competición</div>
+      <h1 class="page-banner-title">Crea tu torneo en el tatami</h1>
+      <p class="page-banner-desc">Ponle nombre al torneo, añade a tus participantes y prepara los cruces. Después, controla cada combate con el marcador reglamentario.</p>
+    </div>
+  </div>
+
+  <section class="scoreboard-section tournament-setup-section" id="tournament-setup">
+    <div class="container">
+      <div class="tournament-builder" id="tournament-builder">
+        <div class="tournament-builder-heading">
+          <div>
+            <h2>Prepara los cruces</h2>
+            <p class="section-desc">Crea una competición para tu clase, tu club o una tarde entre amigos.</p>
+          </div>
+          <span class="tournament-status" id="tournament-status">Sin torneo activo</span>
+        </div>
+
+        <div class="tournament-builder-grid">
+          <form class="tournament-form-panel" id="tournament-form">
+            <label class="tournament-label" for="tournament-name">Torneo</label>
+            <input class="tournament-input" id="tournament-name" type="text" maxlength="48" placeholder="Copa del Dojo" autocomplete="off">
+
+            <div class="tournament-field-heading">
+              <label class="tournament-label" for="participant-name">Participantes</label>
+              <span class="participant-count" id="participant-count">0 / 32</span>
+            </div>
+            <div class="participant-entry">
+              <input class="tournament-input" id="participant-name" type="text" maxlength="32" placeholder="Nombre del judoka" autocomplete="off">
+              <label class="sr-only" for="participant-weight">Peso del judoka en kilogramos</label>
+              <div class="participant-weight-field">
+                <input class="tournament-input" id="participant-weight" type="number" min="20" max="250" step="0.1" placeholder="Peso" aria-label="Peso del judoka en kilogramos" inputmode="decimal">
+                <span class="weight-unit" aria-hidden="true">kg</span>
+              </div>
+              <button class="btn-secondary" id="add-participant" type="button">Añadir</button>
+            </div>
+            <p class="tournament-hint">Añade nombre y peso de cada judoka. Si el número no es potencia de dos, el cuadro asignará los byes automáticamente.</p>
+            <ul class="participant-list" id="participant-list" aria-live="polite"></ul>
+
+            <div class="tournament-form-actions">
+              <button class="btn-primary" id="create-tournament" type="submit">Crear torneo</button>
+              <button class="btn-secondary" id="clear-tournament" type="button">Limpiar</button>
+            </div>
+            <p class="tournament-form-message" id="tournament-form-message" role="status" aria-live="polite"></p>
+          </form>
+
+          <div class="tournament-preview-panel">
+            <div class="tournament-preview-heading">
+              <span>Vista previa del cuadro</span>
+              <span id="bracket-rounds">Sin participantes</span>
+            </div>
+            <div class="bracket-preview" id="tournament-preview">
+              <p class="bracket-empty-state">Añade participantes para ver cómo se organizará el cuadro.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="active-tournament-panel" id="active-tournament-panel" hidden>
+        <div class="active-tournament-heading">
+          <div>
+            <p class="active-tournament-kicker" id="active-tournament-kicker">Próximo combate</p>
+            <h2 id="active-tournament-name">—</h2>
+            <p class="section-desc" id="active-tournament-meta">—</p>
+          </div>
+          <div class="active-tournament-actions">
+            <button class="btn-secondary" id="load-next-match" type="button" disabled>Siguiente combate</button>
+            <button class="btn-secondary" id="new-tournament" type="button">Nuevo torneo</button>
+          </div>
+        </div>
+        <div class="tournament-overview-strip" aria-label="Resumen del torneo">
+          <div class="tournament-overview-item"><span>Participantes</span><strong id="overview-entries">—</strong></div>
+          <div class="tournament-overview-item"><span>Rondas</span><strong id="overview-rounds">—</strong></div>
+          <div class="tournament-overview-item"><span>Combates resueltos</span><strong id="overview-finished">—</strong></div>
+          <div class="tournament-overview-item"><span>Siguiente</span><strong id="overview-next">—</strong></div>
+        </div>
+        <div class="tournament-bracket" id="tournament-bracket" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="scoreboard-section tournament-match-section" id="simulador" hidden>
+    <div class="container">
+      <div class="simulator-wrapper" id="simulator-wrapper">
+        <div class="scoreboard-top-bar">
+          <div class="scoreboard-context">
+            <span class="scoreboard-eyebrow">DOJO SCOREKEEPER</span>
+            <strong class="scoreboard-context-title">Control de combate</strong>
+            <span class="scoreboard-context-detail">Reglamento IJF · 4 minutos</span>
+          </div>
+          <div class="scoreboard-state-block">
+            <span class="scoreboard-status-label">Estado</span>
+            <div class="match-category-tag"><span id="match-state-label">COMBATE LISTO</span><span class="scoreboard-status-dot" aria-hidden="true"></span></div>
+          </div>
+          <div class="golden-score-badge" id="golden-score-badge">GOLDEN SCORE ACTIVO</div>
+          <div class="timer-container">
+            <span class="timer-label">Tiempo reglamentario</span>
+            <div class="digital-clock" id="digital-clock">04:00</div>
+            <div class="timer-controls">
+              <button class="btn-timer" id="btn-toggle-timer">Hajime (Iniciar)</button>
+              <button class="btn-timer" id="btn-reset-timer">Reiniciar Reloj</button>
+              <button class="btn-timer" id="btn-golden-score">Golden Score</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="athletes-scoreboard-grid">
+          <div class="athlete-column white-judogi" id="athlete-white">
+            <div class="athlete-header"><div><span class="athlete-badge">Judogi Blanco</span><h2 class="athlete-name">Hifumi ABE</h2></div><div class="athlete-meta"><div class="athlete-country">JPN 🇯🇵</div><div class="athlete-weight"></div></div></div>
+            <div class="points-display-boxes">
+              <div class="point-score-box ippon-box"><div class="score-box-label">Ippon</div><div class="score-box-num" id="white-ippon">0</div></div>
+              <div class="point-score-box waza-box"><div class="score-box-label">Waza-ari</div><div class="score-box-num" id="white-waza">0</div></div>
+              <div class="point-score-box shido-box"><div class="score-box-label">Shido</div><div class="score-box-num" id="white-shido">0</div></div>
+            </div>
+            <div class="referee-action-buttons">
+              <button class="btn-point-action ippon-btn" data-action="ippon" data-player="white">+ Ippon</button>
+              <button class="btn-point-action waza-btn" data-action="wazaari" data-player="white">+ Waza-ari</button>
+              <button class="btn-point-action shido-btn" data-action="shido" data-player="white">+ Shido</button>
+            </div>
+          </div>
+          <div class="athlete-column blue-judogi" id="athlete-blue">
+            <div class="athlete-header"><div><span class="athlete-badge">Judogi Azul</span><h2 class="athlete-name">Teddy RINER</h2></div><div class="athlete-meta"><div class="athlete-country">FRA 🇫🇷</div><div class="athlete-weight"></div></div></div>
+            <div class="points-display-boxes">
+              <div class="point-score-box ippon-box"><div class="score-box-label">Ippon</div><div class="score-box-num" id="blue-ippon">0</div></div>
+              <div class="point-score-box waza-box"><div class="score-box-label">Waza-ari</div><div class="score-box-num" id="blue-waza">0</div></div>
+              <div class="point-score-box shido-box"><div class="score-box-label">Shido</div><div class="score-box-num" id="blue-shido">0</div></div>
+            </div>
+            <div class="referee-action-buttons">
+              <button class="btn-point-action ippon-btn" data-action="ippon" data-player="blue">+ Ippon</button>
+              <button class="btn-point-action waza-btn" data-action="wazaari" data-player="blue">+ Waza-ari</button>
+              <button class="btn-point-action shido-btn" data-action="shido" data-player="blue">+ Shido</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="scorekeeper-footer">
+          <button class="essential-info-button" id="btn-essential-info" type="button" aria-expanded="false" aria-controls="essential-info-panel">ⓘ Información esencial</button>
+          <span class="scorekeeper-footer-status">Consulta las reglas cuando las necesites.</span>
+          <button class="btn-timer reset-match-button" id="btn-reset-match">Reiniciar Combate</button>
+        </div>
+        <div class="essential-info-panel" id="essential-info-panel" hidden>
+          <div>
+            <strong>Reglas esenciales del combate</strong>
+            <ul>
+              <li>Un Ippon termina el combate.</li>
+              <li>Dos Waza-ari equivalen a Ippon.</li>
+              <li>El tercer Shido provoca hansoku-make.</li>
+              <li>En empate comienza el Golden Score.</li>
+            </ul>
+          </div>
+          <button class="essential-info-close" id="btn-close-essential-info" type="button">Cerrar</button>
+        </div>
+
+        <div class="winner-banner-overlay" id="victory-overlay">
+          <div class="winner-kanji-celebrate">一本</div>
+          <h2 class="winner-title" id="winner-title">¡VICTORIA POR IPPON!</h2>
+          <p class="winner-reason" id="winner-reason">Proyección impecable con velocidad, fuerza y control absoluto.</p>
+          <button class="btn-primary" id="btn-close-victory" onclick="document.getElementById('victory-overlay').classList.remove('show')">Continuar</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>© 2026 Portal de Divulgación del Judo (柔道).</span>
+        <div style="display:flex;gap:20px;"><a href="index.html" style="color:var(--gold-light);font-weight:700;">← Portada</a><a href="#" style="color:var(--gold-light);font-weight:700;">↑ Volver arriba</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal-overlay" id="modal-google-auth" role="dialog" aria-modal="true" aria-labelledby="google-auth-title">
+    <div class="modal-content google-auth-card">
+      <button class="btn-close-modal" id="btn-close-google-modal">✕</button>
+      <div class="google-auth-header"><svg class="google-logo-full" viewBox="0 0 24 24" width="36" height="36"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg><h3 class="google-auth-title" id="google-auth-title">Acceder con Google</h3><p class="google-auth-subtitle">Portal de Judo (柔道)</p></div>
+      <div class="google-accounts-list" id="google-accounts-list"><div class="account-selector-item" data-account="alvaro"><div class="account-avatar-circle" style="background:#e63946;color:#fff;">A</div><div class="account-details"><span class="account-name">Álvaro</span><span class="account-email">alvaro@gmail.com</span></div><span class="account-chip-tag">Google</span></div><div class="account-selector-item" data-account="judoka"><div class="account-avatar-circle" style="background:#1d4ed8;color:#fff;">J</div><div class="account-details"><span class="account-name">Judoka Sensei</span><span class="account-email">sensei@kodokan.org</span></div><span class="account-chip-tag">Dojo</span></div><div class="account-custom-login-toggle" id="btn-toggle-custom-google"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span>Usar otra cuenta</span></div><form class="custom-google-form" id="custom-google-form" style="display:none;"><input type="text" id="custom-google-name" placeholder="Tu nombre" required class="google-custom-input"><input type="email" id="custom-google-email" placeholder="tu.correo@gmail.com" required class="google-custom-input"><button type="submit" class="btn-google-submit">Continuar</button></form></div>
+      <div class="google-auth-footer"><p>Google compartirá tu nombre e email con el Portal de Judo.</p></div>
+    </div>
+  </div>
+  <div class="modal-overlay" id="modal-judoka-passport" role="dialog" aria-modal="true"><div class="modal-content passport-card-modal"><button class="btn-close-modal" id="btn-close-passport-modal">✕</button><div class="passport-id-badge"><div class="passport-header-bar"><div class="passport-logo-lockup"><div class="passport-kanji-stamp">講道館</div><div><div class="passport-fed-title">KODOKAN JUDO INSTITUTE</div><div class="passport-fed-sub">Licencia Oficial</div></div></div><div class="passport-serial" id="passport-serial-id">JUDO-2026-8821</div></div><div class="passport-body-grid"><div class="passport-photo-column"><div class="passport-photo-frame"><img src="" alt="Foto" class="passport-photo-img" id="passport-photo-img"><div class="passport-red-seal">柔道<br>検定</div></div><div class="passport-status-pill">ACTIVO</div></div><div class="passport-fields-column"><div class="passport-field-row"><div class="passport-field"><span class="p-label">Nombre:</span><span class="p-value" id="passport-name">Judoka</span></div><div class="passport-field"><span class="p-label">Email:</span><span class="p-value" id="passport-email">email</span></div></div><div class="passport-field-row"><div class="passport-field"><label for="passport-belt-select" class="p-label">Grado:</label><select id="passport-belt-select" class="passport-select"><option value="white">Blanco (6º Kyu)</option><option value="yellow">Amarillo (5º Kyu)</option><option value="orange">Naranja (4º Kyu)</option><option value="green">Verde (3º Kyu)</option><option value="blue">Azul (2º Kyu)</option><option value="brown">Marrón (1º Kyu)</option><option value="black">Negro (1º-5º Dan)</option><option value="red-white">Blanco y Rojo (6º-8º Dan)</option><option value="red">Rojo (9º-10º Dan)</option></select></div><div class="passport-field"><span class="p-label">Tokui-Waza:</span><span class="p-value gold-text" id="passport-tokui-waza">Pendiente</span></div></div><div class="passport-field-row"><div class="passport-field"><span class="p-label">Victorias:</span><span class="p-value" id="passport-victories">0</span></div><div class="passport-field"><span class="p-label">Ingreso:</span><span class="p-value" id="passport-date">2026</span></div></div></div></div><div class="passport-footer-actions"><button class="btn-primary" id="btn-save-passport">Guardar</button><button class="btn-secondary" id="btn-passport-take-quiz">Test Tokui-Waza</button></div></div></div></div>
+
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>

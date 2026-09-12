@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JUDO (柔道) — El Camino de la Suavidad | Filosofía, Técnicas y Deporte Olímpico</title>
+  <meta name="description" content="Portal completo del Judo (柔道): filosofía de Jigoro Kano, enciclopedia de técnicas Gokyo no Waza, simulador de combate olímpico, cinturones y glosario.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23e63946'/><text x='50%' y='68%' font-size='60' text-anchor='middle' fill='%23ffffff' font-family='serif'>柔</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#hero">Saltar al contenido principal</a>
+
+  <!-- CABECERA -->
+  <header class="site-header" id="site-header">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand-logo" id="logo-brand">
+        <div class="logo-kanji-badge">柔</div>
+        <div class="logo-text-wrap">
+          <span class="logo-title">Judo • 柔道</span>
+          <span class="logo-sub">El Camino de la Suavidad</span>
+        </div>
+      </a>
+      <nav class="main-nav" id="main-nav">
+        <a href="filosofia.html" class="nav-link" id="nav-link-filosofia">Filosofía</a>
+        <a href="tecnicas.html" class="nav-link" id="nav-link-tecnicas">Técnicas</a>
+        <a href="cinturones.html" class="nav-link" id="nav-link-cinturones">Cinturones</a>
+        <a href="historia.html" class="nav-link" id="nav-link-historia">Historia</a>
+        <a href="glosario.html" class="nav-link" id="nav-link-glosario">Glosario</a>
+        <a href="marcador.html" class="nav-link nav-link-mobile-cta" id="nav-link-mobile-tatami">Torneo</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="btn-audio" id="btn-sound-toggle" title="Campana ceremonial del dojo" aria-label="Campana ceremonial del dojo">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+          <span class="btn-audio-text">Campana</span>
+        </button>
+        <div class="auth-nav-container" id="auth-nav-container">
+          <button class="btn-google-auth" id="btn-google-login" title="Iniciar sesión con Google">
+            <svg class="google-icon" viewBox="0 0 24 24" width="16" height="16"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg>
+            <span>Acceder</span>
+          </button>
+          <div class="user-profile-chip" id="user-profile-chip" style="display:none;">
+            <button class="profile-chip-btn" id="profile-chip-trigger" aria-expanded="false" aria-label="Menú de usuario">
+              <img src="" alt="Avatar" class="user-avatar-img" id="nav-user-avatar">
+              <span class="user-name-label" id="nav-user-name">Judoka</span>
+              <span class="user-belt-badge" id="nav-user-belt">Blanco</span>
+              <svg class="chevron-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="user-dropdown-menu" id="user-dropdown-menu">
+              <div class="dropdown-header">
+                <strong id="dropdown-full-name">Nombre</strong>
+                <span id="dropdown-email">email@gmail.com</span>
+              </div>
+              <div class="dropdown-divider"></div>
+              <button class="dropdown-item" id="btn-open-judoka-passport">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"></rect><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                <span>Mi Pasaporte Judoka</span>
+              </button>
+              <button class="dropdown-item" id="btn-dropdown-quiz">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path></svg>
+                <span>Test Tokui-Waza</span>
+              </button>
+              <div class="dropdown-divider"></div>
+              <button class="dropdown-item logout-item" id="btn-google-logout">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline></svg>
+                <span>Cerrar sesión</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <a href="marcador.html" class="btn-cta-nav" id="cta-header-fight">Torneo</a>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO PORTADA -->
+  <section class="hero-section" id="hero">
+    <div class="hero-kanji-watermark" aria-hidden="true">柔道</div>
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <h1 class="hero-headline">
+          El Arte de Vencer <br>
+          <span class="text-gradient-red">Cediendo a la Fuerza</span>
+          <span class="kanji-sub">精力善用 • 自他共栄</span>
+        </h1>
+        <p class="hero-description">
+          El Judo (柔道) convierte el movimiento y el desequilibrio en una práctica de fuerza, técnica y carácter. Conoce sus principios, aprende sus técnicas y entra al tatami.
+        </p>
+        <div class="hero-actions">
+          <a href="tecnicas.html" class="btn-primary" id="hero-btn-explore">
+            <span>Explorar Técnicas (Waza)</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="tecnicas.html#tecnicas" class="btn-secondary" id="hero-btn-quiz">
+            <span>Explora las familias técnicas</span>
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual-card" id="hero-visual-art">
+        <div class="visual-graphic-container">
+          <div class="visual-enso-ring"></div>
+          <div class="visual-inner-graphic">
+            <svg class="dojo-emblem-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="100" cy="100" r="92" stroke="rgba(255,255,255,0.15)" stroke-width="2" stroke-dasharray="6 6"/>
+              <path d="M100 25 C120 60 140 80 175 100 C140 120 120 140 100 175 C80 140 60 120 25 100 C60 80 80 60 100 25 Z" fill="url(#kodokan-gradient)" stroke="#d4af37" stroke-width="2.5"/>
+              <circle cx="100" cy="100" r="42" fill="#e63946" stroke="#ffffff" stroke-width="3"/>
+              <text x="100" y="112" font-family="'Shippori Mincho', serif" font-size="34" font-weight="bold" fill="#ffffff" text-anchor="middle">柔</text>
+              <defs>
+                <linearGradient id="kodokan-gradient" x1="25" y1="25" x2="175" y2="175" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#ffffff"/><stop offset="1" stop-color="#f1f5f9"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <div class="visual-caption">KODOKAN JUDO INSTITUTE</div>
+            <div class="visual-subcaption">講道館柔道 • Tokio, Japón</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HUB DE SECCIONES -->
+  <section class="hub-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Explora el Universo del 柔道</h2>
+        <p class="section-desc">Encuentra una puerta de entrada: principios, técnicas, grados, competición, historia o vocabulario del dojo.</p>
+      </div>
+      <div class="hub-grid">
+        <a href="filosofia.html" class="hub-card">
+          <div class="hub-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2 4.5 13h6l-1 9L19.5 11h-6L13 2Z"/></svg></div>
+          <div class="hub-card-tag">Fundamentos Espirituales</div>
+          <div class="hub-card-title">Filosofía y Código Moral</div>
+          <div class="hub-card-desc">Las dos ideas que sostienen el método de Jigoro Kano y las virtudes que se practican dentro y fuera del dojo.</div>
+          <div class="hub-card-cta">Explorar Filosofía <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </a>
+        <a href="tecnicas.html" class="hub-card">
+          <div class="hub-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M7 4h10l2 5-4 2v9H9v-9L5 9l2-5Z"/><path d="M9 7h6M8 11l4 2 4-2"/></svg></div>
+          <div class="hub-card-tag">Arsenal Técnico (技)</div>
+          <div class="hub-card-title">Enciclopedia de Técnicas</div>
+          <div class="hub-card-desc">Consulta proyecciones y controles de suelo. Busca por nombre y filtra por familia técnica.</div>
+          <div class="hub-card-cta">Explorar Técnicas <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </a>
+        <a href="cinturones.html" class="hub-card">
+          <div class="hub-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1"/></svg></div>
+          <div class="hub-card-tag">Graduación y Jerarquía</div>
+          <div class="hub-card-title">El Camino del Cinturón</div>
+          <div class="hub-card-desc">Sigue el recorrido del 6.º Kyu al 10.º Dan y descubre qué representa cada grado.</div>
+          <div class="hub-card-cta">Ver Cinturones <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </a>
+        <a href="marcador.html" class="hub-card">
+          <div class="hub-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="13" r="7.5"/><path d="M12 13V8m0-6v2m-3-2h6m1.8 5.2 1.5-1.5"/></svg></div>
+          <div class="hub-card-tag">Arbitraje y Competición</div>
+          <div class="hub-card-title">Simulador Olímpico</div>
+          <div class="hub-card-desc">Maneja el reloj, suma Ippon y Waza-ari, aplica Shidos y decide el combate en Golden Score.</div>
+          <div class="hub-card-cta">Entrar al Tatami <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </a>
+        <a href="tecnicas.html#tecnicas" class="hub-card">
+          <div class="hub-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M9.3 9a3 3 0 1 1 5.6 1.5c-.8 1.1-2.9 1.5-2.9 3.2M12 17h.01"/></svg></div>
+          <div class="hub-card-tag">Autoconocimiento Marcial</div>
+          <div class="hub-card-title">Familias de técnicas</div>
+          <div class="hub-card-desc">Consulta proyecciones y controles de suelo, organizados por su mecánica y aplicación.</div>
+          <div class="hub-card-cta">Explorar Técnicas <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </a>
+        <a href="historia.html" class="hub-card">
+          <div class="hub-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 4h12v16H6a2 2 0 0 1 0-4h12M6 4a2 2 0 0 0 0 4h12"/><path d="M9 11h6m-6 3h4"/></svg></div>
+          <div class="hub-card-tag">Legado y Evolución</div>
+          <div class="hub-card-title">Crónica Histórica</div>
+          <div class="hub-card-desc">Viaja desde la fundación del Kodokan en 1882 hasta la escena olímpica contemporánea.</div>
+          <div class="hub-card-cta">Ver Historia <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </a>
+        <a href="glosario.html" class="hub-card">
+          <div class="hub-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H11v17H6.5A2.5 2.5 0 0 0 4 22V5.5Zm16 0A2.5 2.5 0 0 0 17.5 3H13v17h4.5A2.5 2.5 0 0 1 20 22V5.5Z"/></svg></div>
+          <div class="hub-card-tag">Vocabulario Tradicional</div>
+          <div class="hub-card-title">Glosario del Dojo</div>
+          <div class="hub-card-desc">Busca en japonés o español términos de arbitraje, técnica, indumentaria y etiqueta.</div>
+          <div class="hub-card-cta">Ver Glosario <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-quote-box">
+          <p class="footer-quote-text">"El Judo debe elevarse por encima de una simple técnica de lucha para convertirse en una forma de vida; el objetivo final es perfeccionarse uno mismo y contribuir positivamente al mundo."</p>
+          <div class="footer-quote-author">Profesor Jigoro Kano (1860 - 1938) • Fundador del Judo</div>
+        </div>
+        <div>
+          <h3 class="footer-heading">Secciones</h3>
+          <div class="footer-links-list">
+            <a href="filosofia.html" class="footer-link">Filosofía y Máximas</a>
+            <a href="tecnicas.html" class="footer-link">Catálogo de Técnicas (Gokyo)</a>
+            <a href="cinturones.html" class="footer-link">El Camino del Cinturón (Obi)</a>
+            <a href="marcador.html" class="footer-link">Simulador de Marcador Olímpico</a>
+            <a href="tecnicas.html#tecnicas" class="footer-link">Familias de técnicas</a>
+            <a href="historia.html" class="footer-link">Historia del Judo</a>
+            <a href="glosario.html" class="footer-link">Glosario del Dojo</a>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer-heading">Instituciones Mundiales</h3>
+          <div class="footer-links-list">
+            <span class="footer-link">Kodokan Judo Institute (Tokio)</span>
+            <span class="footer-link">Federación Internacional de Judo (IJF)</span>
+            <span class="footer-link">Unión Europea de Judo (EJU)</span>
+            <span class="footer-link">Real Federación Española de Judo (RFEJYDA)</span>
+            <span class="footer-link">Comité Olímpico Internacional (COI)</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div><span>© 2026 Portal de Divulgación del Judo (柔道). Desarrollado con HTML5, CSS y JavaScript Vanilla.</span></div>
+        <div style="display:flex;gap:20px;"><a href="#hero" style="color:var(--gold-light);font-weight:700;">↑ Volver arriba</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODALES DE AUTENTICACIÓN Y PASAPORTE -->
+  <div class="modal-overlay" id="modal-google-auth" role="dialog" aria-modal="true" aria-labelledby="google-auth-title">
+    <div class="modal-content google-auth-card">
+      <button class="btn-close-modal" id="btn-close-google-modal" aria-label="Cerrar">✕</button>
+      <div class="google-auth-header">
+        <svg class="google-logo-full" viewBox="0 0 24 24" width="36" height="36"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg>
+        <h3 class="google-auth-title" id="google-auth-title">Acceder con Google</h3>
+        <p class="google-auth-subtitle">para continuar al Portal de Judo (柔道 - Kodokan)</p>
+      </div>
+      <div class="google-official-slot"><div id="google-official-btn-slot"></div></div>
+      <div class="google-accounts-list" id="google-accounts-list">
+        <div class="account-selector-item" data-account="alvaro">
+          <div class="account-avatar-circle" style="background:#e63946;color:#fff;">A</div>
+          <div class="account-details"><span class="account-name">Álvaro</span><span class="account-email">alvaro@gmail.com</span></div>
+          <span class="account-chip-tag">Google</span>
+        </div>
+        <div class="account-selector-item" data-account="judoka">
+          <div class="account-avatar-circle" style="background:#1d4ed8;color:#fff;">J</div>
+          <div class="account-details"><span class="account-name">Judoka Sensei</span><span class="account-email">sensei@kodokan.org</span></div>
+          <span class="account-chip-tag">Dojo</span>
+        </div>
+        <div class="account-custom-login-toggle" id="btn-toggle-custom-google">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          <span>Usar otra cuenta</span>
+        </div>
+        <form class="custom-google-form" id="custom-google-form" style="display:none;">
+          <input type="text" id="custom-google-name" placeholder="Tu nombre completo" required class="google-custom-input">
+          <input type="email" id="custom-google-email" placeholder="tu.correo@gmail.com" required class="google-custom-input">
+          <button type="submit" class="btn-google-submit">Continuar con esta cuenta</button>
+        </form>
+      </div>
+      <div class="google-auth-footer"><p>Google compartirá tu nombre e email con el Portal de Judo.</p></div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-judoka-passport" role="dialog" aria-modal="true">
+    <div class="modal-content passport-card-modal">
+      <button class="btn-close-modal" id="btn-close-passport-modal" aria-label="Cerrar pasaporte">✕</button>
+      <div class="passport-id-badge">
+        <div class="passport-header-bar">
+          <div class="passport-logo-lockup">
+            <div class="passport-kanji-stamp">講道館</div>
+            <div><div class="passport-fed-title">KODOKAN JUDO INSTITUTE • ATLETA FEDERADO</div><div class="passport-fed-sub">Licencia Oficial de Practicante de Judo</div></div>
+          </div>
+          <div class="passport-serial" id="passport-serial-id">JUDO-2026-8821</div>
+        </div>
+        <div class="passport-body-grid">
+          <div class="passport-photo-column">
+            <div class="passport-photo-frame">
+              <img src="" alt="Foto de Judoka" class="passport-photo-img" id="passport-photo-img">
+              <div class="passport-red-seal">柔道<br>検定</div>
+            </div>
+            <div class="passport-status-pill">ACTIVO EN TATAMI</div>
+          </div>
+          <div class="passport-fields-column">
+            <div class="passport-field-row">
+              <div class="passport-field"><span class="p-label">Nombre:</span><span class="p-value" id="passport-name">Judoka</span></div>
+              <div class="passport-field"><span class="p-label">Email:</span><span class="p-value" id="passport-email">email@gmail.com</span></div>
+            </div>
+            <div class="passport-field-row">
+              <div class="passport-field">
+                <label for="passport-belt-select" class="p-label">Grado:</label>
+                <select id="passport-belt-select" class="passport-select">
+                  <option value="white">Blanco (6º Kyu)</option>
+                  <option value="yellow">Amarillo (5º Kyu)</option>
+                  <option value="orange">Naranja (4º Kyu)</option>
+                  <option value="green">Verde (3º Kyu)</option>
+                  <option value="blue">Azul (2º Kyu)</option>
+                  <option value="brown">Marrón (1º Kyu)</option>
+                  <option value="black">Negro (1º-5º Dan)</option>
+                  <option value="red-white">Blanco y Rojo (6º-8º Dan)</option>
+                  <option value="red">Rojo (9º-10º Dan)</option>
+                </select>
+              </div>
+              <div class="passport-field"><span class="p-label">Tokui-Waza:</span><span class="p-value gold-text" id="passport-tokui-waza">Pendiente</span></div>
+            </div>
+            <div class="passport-field-row">
+              <div class="passport-field"><span class="p-label">Victorias:</span><span class="p-value" id="passport-victories">0 victorias</span></div>
+              <div class="passport-field"><span class="p-label">Ingreso:</span><span class="p-value" id="passport-date">Septiembre 2026</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="passport-footer-actions">
+          <button class="btn-primary" id="btn-save-passport">Guardar Cambios</button>
+          <button class="btn-secondary" id="btn-passport-take-quiz">Test Tokui-Waza</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
